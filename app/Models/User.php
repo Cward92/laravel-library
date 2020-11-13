@@ -32,4 +32,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    public function checkout()
+    {
+        return $this->belongsTo(Checkout::class);
+    }
 }

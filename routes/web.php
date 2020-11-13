@@ -19,26 +19,21 @@ $router->get('/', function () use ($router) {
 
 $router->post('/register','UsersController@register');
 
+// Routes for Books
 $router->get('/books', 'BooksController@index');
 $router->get('/books/{book}', 'BooksController@show');
 $router->post('/books/create', 'BooksController@store');
 $router->put('/books/{book}', 'BooksController@update');
 $router->delete('/books/{book}/delete', 'BooksController@destroy');
 
+// Routes for Users
+$router->get('/users', 'UsersController@index');
+$router->get('/users/{user}', 'UsersController@show');
+$router->post('/users/create', 'UsersController@store');
+$router->put('/users/{user}', 'UsersController@update');
+$router->delete('/users/{user}/delete', 'UsersController@destroy');
 
-
-// Route::get('/users', 'UserController@index');
-// // create and store handled by auth
-// Route::get('/users/{id}', 'UserController@show');
-// Route::get('/users/{id}/edit', 'UserController@edit');
-// // Route::put('users/{id}', 'UserController@update');
-// Route::post('/users/{id}/edit', 'UserController@update');
-// Route::get('/users/{id}/delete', 'UserController@destroy');
-
-
-
-// Route::get('/checkout', 'CheckoutController@index');
-// Route::get('/checkout/out', 'CheckoutController@create');
-// Route::post('/checkout/out', 'CheckoutController@store');
-// Route::get('/checkout/in', 'CheckoutController@edit');
-// Route::post('/checkout/in', 'CheckoutController@destroy');
+// Routes to Checkout
+$router->get('/checkout', 'CheckoutController@index'); //view list of all checked out books
+$router->post('/checkout', 'CheckoutController@store');
+$router->delete('/checkout/{id}/delete', 'CheckoutController@destroy');

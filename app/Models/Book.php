@@ -29,6 +29,11 @@ class Book extends Model
 
     public function genres()
     {
-        return$this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class);
+    }
+
+    public function checkout()
+    {
+        return $this->belongsTo(Checkout::class);
     }
 }

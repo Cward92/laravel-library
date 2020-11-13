@@ -32,6 +32,41 @@ class UsersController extends Controller
         $data['name'] =  $user->name;
 
         return response(['data' => $data, 'message' => 'Account created successfully!', 'status' => true]);
-    }  
+    }
+
+    public function index()
+    {
+        return User::all();
+    }
+
+    public function show($user)
+    {
+        return User::find($user);
+    }
+
+    public function store()
+    {
+        return User::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'passport' => request('passport')
+        ]);
+    }
+
+    public function update($user)
+    {
+        $user = User::find($user);
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = request('password');
+
+        $user->save();
+    }
+
+    public function destroy($user)
+    {
+        $user = User::find($user);
+        $user->delete();
+    }
      
 }

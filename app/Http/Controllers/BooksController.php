@@ -14,7 +14,6 @@ class BooksController extends Controller
      */
     public function index()
     {
-        echo('this is the index');
         return Book::all();
   
     }
@@ -27,13 +26,13 @@ class BooksController extends Controller
     public function store()
     {
         return Book::create([
-            'title' => request('title') ? : 'unknown',
-            'excerpt' => request('excerpt') ? : 'unknown',
-            'isbn' => request('isbn') ? : '0',
-            'pages' => request('pages') ? : '0',
-            'value' => request('value') ? : '0.00',
-            'cost' => request('cost') ? : '0.00',
-            'released' => request('released') ?: '1799-01-01',
+            'title' => request('title'),
+            'excerpt' => request('excerpt'),
+            'isbn' => request('isbn'),
+            'pages' => request('pages'),
+            'value' => request('value'),
+            'cost' => request('cost'),
+            'released' => request('released')
         ]);
     }
 

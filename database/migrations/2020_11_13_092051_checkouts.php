@@ -15,14 +15,10 @@ class Checkouts extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('checked_out_on')->useCurrent();
+            $table->timestamp('checked_out_on')->default(DB::raw('CURRENT_TIMESTAMP'));
             //$table->date('return_by') -> doesn't work, need carbon or something
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
-            $table->string('checked_out_by');
-            $table->string('isbn');
-            $table->string('title');
-            $table->string('author');
             $table->timestamps();
 
             $table->foreign('user_id')
