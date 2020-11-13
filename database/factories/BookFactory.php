@@ -24,7 +24,7 @@ class BookFactory extends Factory
         return [
             'title' => $this->faker->word,
             'excerpt' => $this->faker->sentence,
-            'isbn' => $this->faker->numberBetween($min = 123456, $max = 999999),
+            'isbn' => $this->faker->isbn13,
             'pages' => $this->faker->numberBetween($min = 50, $max = 999),
             'value' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0.00, $max = 200.00),
             'cost' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0.00, $max = 200.00),

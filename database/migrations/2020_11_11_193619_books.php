@@ -17,7 +17,7 @@ class Books extends Migration
             $table->bigIncrements('id');
             $table->text('title');
             $table->text('excerpt');
-            $table->integer('isbn');
+            $table->char('isbn', 13);
             $table->integer('pages');
             $table->double('cost');
             $table->double('value');

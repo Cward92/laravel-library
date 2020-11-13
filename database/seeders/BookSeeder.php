@@ -15,7 +15,7 @@ class BookSeeder extends Seeder
     public function run()
     {
         $count = 0;
-        while($count < 30){
+        while($count < 10){
             Book::factory()
                 ->hasAuthors(rand(1,2))
                 ->hasGenres(rand(1,3))
