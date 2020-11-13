@@ -21,7 +21,7 @@ class Books extends Migration
             $table->integer('pages');
             $table->double('cost');
             $table->double('value');
-            $table->datetime('released');
+            $table->datetime('released')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
 

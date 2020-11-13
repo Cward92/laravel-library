@@ -12,6 +12,15 @@ class Book extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
+    protected $fillable = [
+        "title", 
+        "excerpt", 
+        "isbn", 
+        "pages", 
+        "value", 
+        "cost", 
+        "released"
+    ];
 
     public function authors()
     {

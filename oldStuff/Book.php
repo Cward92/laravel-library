@@ -10,9 +10,19 @@ class Book extends Model
 {
     use HasFactory;
     protected $table = 'books';
+    protected $fillable = [
+        "title", 
+        "excerpt", 
+        "isbn", 
+        "pages", 
+        "value", 
+        "cost", 
+        "release_date"
+    ];
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
+
 
     public function book_author()
     {
