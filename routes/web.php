@@ -14,7 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return 'Hello World';
 });
 
 $router->post('/register','UsersController@register');
+
+$router->get('/books', 'BooksController@index');
+$router->get('/books/{book}', 'BooksController@show');
+
